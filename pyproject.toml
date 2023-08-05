@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "radarcord.py"
+version = "1.0.0"
+authors = [
+    { name = "Yoshiboi18303", email = "yoshiboi18303.t@gmail.com" }
+]
+description = "The best way to interact with the Radarcord API!"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 5 - Production/Stable",
+]
+dependencies = [
+    "discord.py>=2.3.1",
+    "requests>=2.31.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/radarcord-net/radarcord.py#readme" # This is temporary
+"Source Code" = "https://github.com/radarcord-net/radarcord.py"
+"Bug Tracker" = "https://github.com/radarcord-net/radarcord.py/issues"
