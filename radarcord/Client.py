@@ -1,6 +1,7 @@
 import discord
 import requests
 import threading
+import time
 from .enums import IntervalPreset
 from .errors.RadarcordException import RadarcordException
 from .utils import Result, Review, ensure_is_ok
@@ -79,11 +80,13 @@ class RadarcordClient:
                 self.post_stats(shard_count)
             except RadarcordException as e:
                 print(f"Autopost failed: {str(e)}")
+            time.sleep(interval.value)
 
         autopost_thread = threading.Thread(target=post)
+        autopost_thread.start()
 
         while True:
-            autopost_thread.start()
+            time.sleep(0.1)
 
     def get_reviews(self) -> list[Review]:
         """Gets all the reviews for your bot.
